@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>熱中症対策アプリ</title>
+  <!-- iOS PWA設定 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="熱中症対策">
+  <link rel="apple-touch-icon" href="images/icons/icon_72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="images/icons/icon_114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="images/icons/icon_120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="images/icons/icon_144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="images/icons/icon_152x152.png" sizes="152x152">
+  <!-- Android/Chrome(PC)用PWA設定 -->
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function(registration) {
+        // 登録成功
+        console.log('ServiceWorker の登録に成功しました。スコープ: ', registration.scope);
+      }).catch(function(err) {
+        // 登録失敗
+        console.log('ServiceWorker の登録に失敗しました。', err);
+      });
+    }
+  </script>
+  <!-- Android/Chrome(PC)用PWA設定 ここまで -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+</head>
+<body>
+
+<!--#include file="common/header.html"-->
+<main class="main">
+  <div class="wrap">
+    <button id="install-button" class="btn-primary" disabled>ホーム画面に追加</button>
+  </div>
+
+  <div class="wrap top-alert">
+    <img class="weather_icon" src="images/sunny.png" alt="晴れ">
+    <div class="top-alert-text">
+      <div class="balloon">
+        <p>「<span class="bold selected_day">今日</span>」の「<span class="bold area_name">大阪市・中央区</span>」は、<br>熱中症警戒レベルは<span class="emphasis alert_level_text">厳重警戒</span>です。</p>
+      </div>
+      <p class="">提供：環境省データ</p>
+    </div>
+  </div>
+
+  <div class="wrap alert-level">
+    <div class="title-wrapper">
+      <h2 class="section-title title-alert-level">熱中症警戒レベル</h2>
+    </div>
+    <img class="alert-level-img" src="images/meter.png" alt="熱中症警戒レベルメーター">
+    <div class="scale-box">
+      <!-- <div class="scale_00"></div>
+      <div class="scale_01"></div>
+      <div class="scale_02"></div>
+      <div class="scale_03"></div>
+      <div class="scale_04"></div> -->
+      <div class="scale">
+        <img src="images/scale.png" alt="警戒レベルスケール" id="scale_img">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap values">
+    <div class="title-wrapper">
+      <h2 class="section-title title-values">気温・湿度等</h2>
+    </div>
+    <div class="values-box">
+      <a class="values-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+      <a class="values-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+      <a class="values-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+    </div>
+  </div>
+
+  <div class="wrap goods">
+    <div class="title-wrapper">
+      <h2 class="section-title title-goods">オススメ対策グッズ</h2>
+    </div>
+    <div class="goods-box">
+      <a class="goods-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+      <a class="goods-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+      <a class="goods-item" href="#"><img src="images/no_image_00.png" alt=""></a>
+    </div>
+  </div>
+</main>
+<!--#include file="common/footer.html"-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+/* ***********************************
+ *  〜479px：スマートフォン縦
+ *  480px〜599px：スマートフォン横
+ *  600px〜959px：タブレット
+ *  960px〜：小型PC以上
+ *  （1280px〜：大型PC）
+ * ***********************************
+ *
+ *  寒さ対策ページ用 CSS
+ *
+ * *********************************** */
+
+/* ***********************************
+ *  〜479px：SP縦
+ * *********************************** */
+/* header */
+/* 寒さ対策画面のみ全国一覧を表示 */
+#nationwide_link {
+  display: block;
+}
+
+/* footer */
+.footer-icon-img {
+  width: 2.6rem;
+  margin-right: -.6rem;
+}
+
+.footer-goods .footer-icon-img {
+  background:url(../images/cld/icon_mask.svg) center/contain no-repeat;
+}
+
+.footer-caution img {
+  height: 2.8rem;
+}
+
+
+/* nationwide.php(全国一覧) */
+.nationwide-table {
+  width: 100%;
+}
+
+.nationwide-table th {
+  width: 25%;
+  padding: 0.4rem 0;
+  border: 1px solid #bbb;
+}
+
+.nationwide-table td {
+  border: 1px solid #bbb;
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+.wrap.nationwide-wrapper {
+  margin: 0 0 1.6rem 0;
+  background-image: url(../images/cld/snow_bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 4.8rem;
+}
+
+.nationwide-title-wrapper {
+  padding: 2rem 0;
+}
+
+.nationwide-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.nationwide-table {
+  background-color: #fff;
+}
+
+.cldlevel_01 {
+  background-color: #00b0f0;
+}
+
+.cldlevel_02 {
+  background-color: #ffff00;
+}
+
+.cldlevel_03 {
+  background-color: #ffc000;
+}
+
+.cldlevel_04 {
+  background-color: #ff7c80;
+}
+
+.cldlevel_05 {
+  background-color: #ff0000;
+}
+
+.level-explanation {
+  position: fixed;
+  bottom: 5.6rem;
+  width: calc(100% - 3.2rem);
+  left: 1.6rem;
+  padding: 0.6rem 0.4rem 0.2rem;
+  background-color: #fff;
+  border: 2px solid #4f81bd;
+}
+
+.level-explanation-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.level-explanation-list li {
+  width: 20%;
+  text-align: center;
+}
+
+.level-explanation-item p:first-of-type {
+  width: 88%;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.level-explanation-item p:nth-of-type(2) {
+  font-size: .8em;
+  font-weight: bold;
+}
+
+.level-explanation-item:nth-of-type(1) p:first-of-type {
+  background-color: #00b0f0;
+}
+.level-explanation-item:nth-of-type(2) p:first-of-type {
+  background-color: #ffff00;
+}
+.level-explanation-item:nth-of-type(3) p:first-of-type {
+  background-color: #ffc000;
+}
+.level-explanation-item:nth-of-type(4) p:first-of-type {
+  background-color: #ff7c80;
+}
+.level-explanation-item:nth-of-type(5) p:first-of-type {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.scroll-area {
+  overflow-y: scroll;
+  height: calc(100vh - 22rem);
+}
+
+/* caution.php(注意事項) */
+.caution-list li {
+  display: table;
+}
+
+.caution-list li::before {
+  display: table-cell;
+  content: "■";
+  line-height: 0;
+  font-size: 1.6em;
+  padding-right: 0.1em;
+}
+
+.caution-list li + li {
+  margin-top: 1em;
+}
+
+.back-btn-wrapper {
+  width: 80%;
+  margin: 2.4rem auto 0;
+}
+
+.back-btn-wrapper i {
+  padding-right: 1em;
+  margin-left: -0.5em;
+}
+
+/* ***********************************
+ *  480px〜599px：SP横
+ * *********************************** */
+ @media screen and (min-width:480px) and (max-width:599px) {
+
+
+}
+
+
+/* ***********************************
+ *  600px〜：タブレット・PC以上
+ * *********************************** */
+@media screen and (min-width:600px) {
+  /* footer */
+  .footer-icon-img {
+    width: 44px;
+    margin-right: 0;
+  }
+
+  .footer-caution img {
+    height: 48px;
+  }  
+
+  /* 全国一覧 */
+  .wrap.nationwide-wrapper {
+    background-position: center 80px;
+    margin: 0 0 32px 0;
+  }
+
+  .nationwide-title-wrapper {
+    padding:40px 0;
+  }
+
+  .nationwide-title {
+    font-size: 24px;
+  }
+
+  .nationwide-table th {
+    padding: 8px 0;
+  }
+  
+  .nationwide-table td {
+    padding: 8px 0;
+  }
+
+  .level-explanation {
+    bottom: 96px;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 12px 8px 4px;
+    width: 636px;
+  }
+
+  .scroll-area {
+    height: calc(100vh - 380px);
+  }
+
+  /* caution.php(注意事項) */
+  .back-btn-wrapper {
+    margin: 32px auto 0;
+    max-width: 400px;
+  }
+}

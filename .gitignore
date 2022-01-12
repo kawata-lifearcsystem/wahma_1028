@@ -1,0 +1,3 @@
+# SQLite を管理しないようにする
+*.sqlite
+*.sqlite3
